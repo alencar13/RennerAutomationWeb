@@ -3,12 +3,10 @@
 Como executar via IDE Junit:
 
 1. Importar na IDE de preferência o projeto como maven java
-   Abra o arquivo RunnerTest.java (diretório: src/test/java/runner e executar via Junit
-
+2.   Abra o arquivo RunnerTest.java (diretório: src/test/java/runner e executar via Junit
 2.1 Executar o projeto como Junit
 
 Como executar via linha de comando utilizando maven(necessario ter o maven configurado na maquina):
-
 1. Abrir o terminal no diretorio do projeto
 2. Executar o comando: mvn test
 
