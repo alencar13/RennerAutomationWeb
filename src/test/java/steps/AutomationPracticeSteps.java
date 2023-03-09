@@ -33,10 +33,8 @@ public class AutomationPracticeSteps {
     Driver driverWeb;
 
     @Before
-    public void iniciaNavegador(Scenario cenario){
+    public void iniciaNavegador(){
         new Driver(Browser.CHROME);
-        Driver.setNomeCenario(cenario.getName());
-        Driver.criaDiretorio();
     }
     
 	@SuppressWarnings({ "unused", "static-access" })
@@ -81,13 +79,13 @@ public class AutomationPracticeSteps {
 
     @E("validar que os produtos foram para o carrinho")
     public void validarQueOsProdutosForamParaOCarrinho() {
-        carrinhoPage.validaItensNoCarrinho("Stylish Dress");
-        carrinhoPage.validaItensNoCarrinho("Beautiful Peacock Blue Cotton Linen Saree");
-        carrinhoPage.validaItensNoCarrinho("Men Tshirt");
+        carrinhoPage.validaItensNoCarrinho("Stylish Dress", "4", "3");
+        carrinhoPage.validaItensNoCarrinho("Beautiful Peacock Blue Cotton Linen Saree", "41", "2");
+        carrinhoPage.validaItensNoCarrinho("Men Tshirt", "2", "1");
     }
 
     @Entao("efetuo a compra dos itens")
-    public void efetuoACompraDosItens() throws InterruptedException {
+    public void efetuoACompraDosItens() {
         carrinhoPage.prossegueCompra();
         carrinhoPage.finalizaCompra();
         pagamentoPage.confirmaFormaDePagamento();
@@ -96,6 +94,5 @@ public class AutomationPracticeSteps {
     @E("valido a compra efetuada com sucesso")
     public void validoACompraEfetuadaComSucesso() {
         pagamentoEfetuadoPage.validaMensagemSucesso();
-        driver.close();
     }
 }

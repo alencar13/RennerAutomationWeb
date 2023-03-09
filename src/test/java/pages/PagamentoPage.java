@@ -36,12 +36,9 @@ public class PagamentoPage {
 		Driver.visibilityOf(pagamentoMap.btnClosePopup1);
 	}
 
-	public void confirmaFormaDePagamento() throws InterruptedException {
+	public void confirmaFormaDePagamento() {
 		fechaGoogleAds();
-
 		carrinhoPage.finalizaCompra();
-
-		Thread.sleep(3000);
 		pagamentoMap.txtNomeCartao.sendKeys("Lucas Alencar");
 		pagamentoMap.txtNumeroCartao.click();
 		pagamentoMap.txtNumeroCartao.sendKeys("9999 8888 7777 6666");
@@ -55,7 +52,7 @@ public class PagamentoPage {
 
 	}
 
-	private void fechaGoogleAds() throws InterruptedException {
+	private void fechaGoogleAds() {
 			Driver.getDriver().get("https://automationexercise.com/checkout");
 	}
 

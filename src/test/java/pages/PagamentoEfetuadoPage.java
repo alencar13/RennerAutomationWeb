@@ -23,5 +23,6 @@ public class PagamentoEfetuadoPage {
 
 	public void validaMensagemSucesso() {
 		assertEquals(pagamentoEfetuadoMap.lblCompraEfetuadoSucesso.getText(), "Congratulations! Your order has been confirmed!");
+		driver.close();
 	}
 }

@@ -27,12 +27,15 @@ public class CarrinhoPage {
     }
 
 
-    public void validaItensNoCarrinho(String nomeItem) {
+    public void validaItensNoCarrinho(String nomeItem, String numeroItem, String valorQtd) {
         WebDriverWait wait = new WebDriverWait(driver, 300);
         WebElement element = wait.until(ExpectedConditions
                 .elementToBeClickable(By.xpath(("//*[text()='"+ nomeItem +"']"))));
+        WebElement qtdItem = wait.until(ExpectedConditions
+                .elementToBeClickable(By.xpath(("//*[@id='product-"+ numeroItem+ "']/td[4]/button"))));
         Driver.visibilityOf(element);
         assertEquals(element.getText(), nomeItem);
+        assertEquals(qtdItem.getText(), valorQtd);
     }
 
     public void prossegueCompra() {
